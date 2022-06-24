@@ -6,6 +6,6 @@ import com.example.mvvmcodebase.data.source.CocktailRemoteDataSource
 import org.koin.dsl.module
 
 val repoModule = module {
-    single<CocktailDataSource> { CocktailRemoteDataSource(get()) }
+    single<CocktailDataSource.Remote> { CocktailRemoteDataSource(get()) }
     single { CocktailRepository(get()) }
 }

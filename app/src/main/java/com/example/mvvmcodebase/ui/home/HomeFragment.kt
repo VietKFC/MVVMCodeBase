@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.mvvmcodebase.databinding.FragmentHomeLayoutBinding
+import com.example.mvvmcodebase.ui.viewmodel.HomeViewModel
 import com.example.mvvmcodebase.utils.ApiConstant
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -31,7 +32,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerCocktail.adapter = adapter
-        cockTailViewModel.getCocktails(ApiConstant.ALPHABET)
+        cockTailViewModel.setCocktailLetter(ApiConstant.ALPHABET)
         observeData()
     }
 
