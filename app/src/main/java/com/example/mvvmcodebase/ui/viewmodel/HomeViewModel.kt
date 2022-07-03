@@ -15,7 +15,7 @@ class HomeViewModel(private val repository: CocktailRepository) : ViewModel() {
     private val _isError = MutableLiveData<String>()
     val isError: LiveData<String> = _isError
 
-    private val _cocktailLetter = MutableLiveData<String>("")
+    private val _cocktailLetter = MutableLiveData("")
 
     init {
         cocktails = Transformations.switchMap(_cocktailLetter, ::getCocktails)
